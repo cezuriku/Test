@@ -10,4 +10,5 @@ add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 
 add_subdirectory(lib/entityx)
 add_subdirectory(lib/SFML)
+include_directories(lib/SFML/include)
 target_link_libraries(${EXECUTABLE_NAME} entityx sfml-system sfml-window sfml-graphics)
