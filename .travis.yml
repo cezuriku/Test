@@ -3,11 +3,8 @@ compiler: gcc
 dist: trusty
 sudo: true
 
-before_install:
-  - sudo apt-get update
-
 install: 
-  - sudo apt-get install libsfml-dev --yes
+  - sudo apt-get install pthread opengl xlib xrandr freetype glew jpeg sndfile openal
   - sudo apt-get install libbox2d-dev --yes
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
