@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 2.8)
 # Define sources and executable
 set(EXECUTABLE_NAME "project")
 
-# Set version information in a config.h file
-set(FINGEROS_VERSION_MAJOR 0)
-set(FINGEROS_VERSION_MINOR 1)
-
 # Enable debug symbols by default
 # must be done before project() statement
 if(NOT CMAKE_BUILD_TYPE)
@@ -18,7 +14,7 @@ project(sampleProject)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES src/main.cpp)
+file(GLOB_RECURSE SOURCE_FILES "src/*.cpp")
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 
 # Detect and add SFML
@@ -31,8 +27,5 @@ if(SFML_FOUND)
     target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 endif()
 
-# CPack packaging
-include(InstallRequiredSystemLibraries)
-set(CPACK_PACKAGE_VERSION_MAJOR "${FINGEROS_VERSION_MAJOR}")
-set(CPACK_PACKAGE_VERSION_MINOR "${FINGEROS_VERSION_MINOR}")
-include(CPack)
+add_subdirectory(lib/entityx)
+target_link_libraries(${EXECUTABLE_NAME} entityx)

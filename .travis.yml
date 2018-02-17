@@ -8,6 +8,7 @@ before_install:
 
 install: 
   - sudo apt-get install libsfml-dev --yes
+  - sudo apt-get install libbox2d-dev --yes
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
