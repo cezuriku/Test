@@ -4,7 +4,8 @@ dist: trusty
 sudo: true
 
 install: 
-  - sudo apt-get install pthread opengl xlib xrandr freetype glew jpeg sndfile openal
+  - sudo apt-get install libpthread-stubs0-dev libglc-dev pxlib-dev libxrandr-dev 
+libfreetype6-dev libglew-dev libjpeg-dev libsndfile1-dev libopenal-dev
   - sudo apt-get install libbox2d-dev --yes
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
