@@ -1,16 +1,13 @@
 language: cpp
 compiler: gcc
-os: linux
-dist: precise
-group: stable
+dist: trusty
 sudo: true
 
 before_install:
-  - sudo apt-add-repository ppa:sonkun/sfml-development --yes
-  - sudo apt-get update -qq
+  - sudo apt-get update
 
 install: 
-  - sudo apt-get install libsfml-dev
+  - sudo apt-get install libsfml-dev --yes
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
