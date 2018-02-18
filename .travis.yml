@@ -2,10 +2,20 @@ language: cpp
 compiler: gcc
 dist: trusty
 sudo: true
-
-before_install: 
-  - sudo apt-get install libpthread-stubs0-dev libglc-dev pxlib-dev libxrandr-dev libfreetype6-dev libglew-dev libjpeg-dev libsndfile1-dev libopenal-dev libudev-dev
-  - sudo apt-get install libbox2d-dev --yes
+addons:
+  apt:
+    packages:
+      libpthread-stubs0-dev
+      libglc-dev
+      pxlib-dev
+      libxrandr-dev
+      libfreetype6-dev
+      libglew-dev
+      libjpeg-dev
+      libsndfile1-dev
+      libopenal-dev
+      libudev-dev
+      libbox2d-dev --yes
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
