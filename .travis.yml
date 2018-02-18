@@ -15,7 +15,7 @@ addons:
       libsndfile1-dev
       libopenal-dev
       libudev-dev
-      libbox2d-dev --yes
+      libbox2d-dev
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
